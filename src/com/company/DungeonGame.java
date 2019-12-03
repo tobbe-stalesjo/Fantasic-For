@@ -8,15 +8,19 @@ public class DungeonGame {
         new Maze();
 
 
-        Item potion = new Item("Healing potion", 1, 0, 0.5);
-        Item dagger = new Item("Dagger", 0, 1, 1.1);
-        Item posion = new Item("Spider Poison", 1, 0, 0.5);
+            //Item healPotion = new Item("Healing potion", 1, 0, 0.5);
+            //Item dagger = new Item("Dagger", 0, 1, 1);
+            //Item poison = new Item("Spider poison", 0, 1, 0.5);
 
-        Backpack backpack = new Backpack();
+            Backpack backpack = new Backpack();
+            //backpack.addItem(healPotion);
+            //backpack.addItem(dagger);
+            //backpack.addItem(poison);
 
+            Dagger dagger = new Dagger("Dagger", 0, 1, 1);
 
-        backpack.addItem(new Item("healing potion", 1, 0, 0.5));
+            backpack.addItem(dagger);
+        }
 
-        System.out.println(Backpack.MAX_TOTAL_WEIGHT);
     }
-}
+

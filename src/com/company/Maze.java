@@ -2,7 +2,6 @@ package com.company;
 
 public class Maze {
 
-
     String[][] grid = {
             {"X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X "},
             {"X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X "},
@@ -19,7 +18,13 @@ public class Maze {
             {"X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X "}
     };
 
-    public void GameBoard() {
+    public Maze() {
+       GameBoard();
+
+    }
+
+
+    private void GameBoard() {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
                 System.out.print(grid[i][j]);

@@ -4,6 +4,6 @@ public class DungeonGame {
 
     public DungeonGame() {
 
-        new Maze().GameBoard();
+        new Maze();
     }
 }

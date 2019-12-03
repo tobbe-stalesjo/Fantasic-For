@@ -8,8 +8,8 @@ public class Backpack {
     private ArrayList<Item> items = new ArrayList<>();
 
 
-    public boolean addItem(Item item){
-        if(getNowTotalWeight() + item.getWeight() <= MAX_TOTAL_WEIGHT){
+    public boolean addItem(Item item) {
+        if (getNowTotalWeight() + item.getWeight() <= MAX_TOTAL_WEIGHT) {
             item.add(item);
 
             return true;
@@ -19,12 +19,12 @@ public class Backpack {
         return false;
     }
 
-    private double getNowTotalWeight(){
+    private double getNowTotalWeight() {
         double totalWeight;
-        for (Item item: items ){
-totalWeight += item.getWeight();
+        for (Item item : items) {
+            totalWeight += item.getWeight();
         }
 
- return totalWeight
+        return totalWeight;
     }
 }

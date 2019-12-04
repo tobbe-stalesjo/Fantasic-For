@@ -2,9 +2,9 @@ package com.company;
 
 public abstract class Creature {
 
-    private class Position {
-        public int x;
-        public int y;
+          private class Position {
+            public int x;
+            public int y;
 
         Position(int x, int y) {
             this.x = x;
@@ -17,4 +17,6 @@ public abstract class Creature {
     public Creature (int x, int y) {
         this.position = new Position(x, y);
     }
+
+
 }

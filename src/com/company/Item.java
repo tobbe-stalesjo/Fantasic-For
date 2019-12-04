@@ -1,14 +1,15 @@
 package com.company;
 
 public abstract class Item {
+
     private String name;
-    private double HPability;
+    private double heals;
     private double damage;
     private double weight;
 
-    public Item(String name, double HPability, double damage, double weight) {
+    public Item(String name, double heals, double damage, double weight) {
         this.name = name;
-        this.HPability = HPability;
+        this.heals = heals;
         this.damage = damage;
         this.weight = weight;
     }
@@ -17,11 +18,25 @@ public abstract class Item {
         return weight;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Item{" + "name='" + name + '\'' + ", HPability=" + HPability + ", damage=" + damage + ", weight=" + weight + '}';
+    public String getName() {
+        return name;
     }
+
+    public double getHeals() {
+        return heals;
+    }
+
+    public double getDamage() {
+        return damage;
+    }
+
+    @Override
+    public abstract String toString();
+
+
 }
+
+
 
 
 

@@ -1,6 +1,7 @@
 package com.company;
 
 public abstract class Item {
+
     private String name;
     private double heals;
     private double damage;

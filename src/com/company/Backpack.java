@@ -19,6 +19,7 @@ public class Backpack {
         return false;
     }
 
+
     private double getCurrentTotalWeight() {
         double totalWeight = 0;
         for (Item item : items) {

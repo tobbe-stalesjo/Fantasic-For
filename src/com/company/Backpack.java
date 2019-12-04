@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 
 import java.util.ArrayList;
 
@@ -8,8 +9,9 @@ public class Backpack {
     private ArrayList<Item> items = new ArrayList<>();
 
     public boolean addItem(Item item) {
-        if (getCurrentTotalWeight() + item.getWeight() <= TOTAL_MAX_WEIGHT) {
+        if (getNowTotalWeight() + item.getWeight() <= MAX_TOTAL_WEIGHT) {
             items.add(item);
+
             return true;
 
         }

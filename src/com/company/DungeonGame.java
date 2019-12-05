@@ -11,7 +11,11 @@ public class DungeonGame {
 
     public DungeonGame() {
 
-        hero = new Hero(0);
+        hero = new Hero(0, false);
+        hero.addItemToBackpack(new Potion("Healing Potion", 1,0,0.5));
+        hero.addItemToBackpack(new Potion("Healing Potion", 1,0,0.5));
+        //Hero börjar med 2 healing potions.
+
         Position pos = hero.getGridPosition();
         System.out.println(pos);
         System.out.println("Välj ett rum att gå till:"+

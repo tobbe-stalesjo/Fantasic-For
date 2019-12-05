@@ -20,7 +20,6 @@ public class Room {
         this.connectedRooms = connectedRooms;
         this.heroX = heroX;
         this.heroY = heroY;
-
     }
 
     public int[] getConnectedRooms() {

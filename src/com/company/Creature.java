@@ -5,8 +5,6 @@ import javafx.geometry.Pos;
 public abstract class Creature {
     private int currentRoom;
 
-
-
     public Position position;
 
     public Creature (int startRoom) {

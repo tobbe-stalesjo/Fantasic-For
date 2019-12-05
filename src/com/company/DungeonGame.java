@@ -20,7 +20,7 @@ public class DungeonGame {
         maze.updateHeroPosition(pos);
         maze.showGameBoard();
 
-<<<<<<< HEAD
+
         hero.setCurrentRoom(1);
         pos = hero.getGridPosition();
         System.out.println(pos);

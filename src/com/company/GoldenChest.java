@@ -2,10 +2,10 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class GoldenChest extends Item {
+public class GoldenChest extends Monster {
     private ArrayList<Dagger> daggers = new ArrayList<>();
     public GoldenChest() {
-        super("Golden Chest", 0, 0, 0);
+        super(2);
     }
 
     @Override

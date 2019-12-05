@@ -28,4 +28,11 @@ public class Backpack {
         //System.out.println("bag is too heavy");
         return totalWeight;
     }
+
+    public String showItems(){
+        for(Item item: items){
+            return item.getName();
+        }
+        return null;
+    }
 }

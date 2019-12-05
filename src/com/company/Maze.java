@@ -32,6 +32,20 @@ public class Maze {
         rooms[0]  = new Room(0, connectedRooms0, 2,2);
         int connectedRooms1[] = {0,2,4};
         rooms[1]  = new Room(0, connectedRooms1, 6,2);
+        int connectedRooms2[] = {2,6};
+        rooms[1]  = new Room(0, connectedRooms2, 10,2);
+        int connectedRooms3[] = {0,2,4};
+        rooms[1]  = new Room(0, connectedRooms3, 2,6);
+        int connectedRooms4[] = {0,2,4};
+        rooms[1]  = new Room(0, connectedRooms4, 6,6);
+        int connectedRooms5[] = {0,2,4};
+        rooms[1]  = new Room(0, connectedRooms5, 10,6);
+        int connectedRooms6[] = {0,2,4};
+        rooms[1]  = new Room(0, connectedRooms6, 2,10);
+        int connectedRooms7[] = {0,2,4};
+        rooms[1]  = new Room(0, connectedRooms7, 6,10);
+        int connectedRooms8[] = {0,2,4};
+        rooms[1]  = new Room(0, connectedRooms8, 10,10);
 
         showGameBoard();
 
@@ -45,33 +59,6 @@ public class Maze {
         return rooms[roomID].getConnectedRooms();
     }
 
-    private void finaRummen(){
-        for( int i = 0 ; i < 3 ; i++){
-            System.out.println();
-            for( int j = 0 ; j < 3 ; j++){
-                System.out.print(rooms[j]);
-            }
-        }
-    }
-
-    private void startPosition() {
-        grid[xPos][yPos] = "O ";
-    }
-
-    private void move() {
-        System.out.println("Skriv din X-Pos [Mellan 1-11]");
-        int newxPos = Integer.parseInt(scanner.nextLine());
-        System.out.println("Skriv din Y-Pos Mellan 1-11]");
-        int newyPos = Integer.parseInt(scanner.nextLine());
-        if (grid[newxPos][newyPos] == ("X ")) {
-            System.out.println("There is a wall!");
-        } else {
-            System.out.println("You enter a room!");
-            grid[newxPos][newyPos] = "O ";
-            grid[xPos][yPos] = "  ";
-        }
-    }
-
 
     public void showGameBoard() {
         for (int i = 0; i < grid.length; i++) {
@@ -82,14 +69,6 @@ public class Maze {
         }
     }
 
-    private void searchRoom() {
-        for (int rad = 0; rad < 5; rad++) {
-            for (int col = 0; col < 5; col++) {
-                System.out.print(grid[rad][col]);
-            }
-            System.out.println();
-        }
-    }
 
     public void updateHeroPosition(Position pos) {
         grid[pos.y][pos.x] = "H";

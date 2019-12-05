@@ -1,27 +1,39 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class DungeonGame {
 
+    Maze maze = new Maze();
+    Hero hero ;
+    Backpack backpack;
+    Dagger dagger;
 
     public DungeonGame() {
 
-        new Maze();
+        hero = new Hero(0);
+        Position pos = hero.getGridPosition();
+        System.out.println(pos);
+        System.out.println("Välj ett rum att gå till:"+
+                Arrays.toString(maze.getGetConnectedRooms(hero.getCurrentRoom())));
+
+        maze.updateHeroPosition(pos);
+        maze.showGameBoard();
 
 
-        //Item healPotion = new Item("Healing potion", 1, 0, 0.5);
-        //Item dagger = new Item("Dagger", 0, 1, 1);
-        //Item poison = new Item("Spider poison", 0, 1, 0.5);
+        hero.setCurrentRoom(1);
+        pos = hero.getGridPosition();
+        System.out.println(pos);
 
-        Backpack backpack = new Backpack();
-        //backpack.addItem(healPotion);
-        //backpack.addItem(dagger);
-        //backpack.addItem(poison);
+        hero.setCurrentRoom(8);
+        pos = hero.getGridPosition();
+        System.out.println(pos);
 
-        Dagger dagger = new Dagger("Dagger", 0, 1, 1);
-        Potion potion = new Potion("Healing potion", 1, 0, 0.5);
-        //GoldenChest goldenChest = new GoldenChest();
+        backpack = new Backpack();
+
+        dagger = new Dagger("Dagger", 0, 1, 1);
+
         backpack.addItem(dagger);
-        backpack.addItem(potion);
     }
 
 }

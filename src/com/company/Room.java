@@ -4,23 +4,28 @@ import java.lang.reflect.Array;
 
 public class Room {
 
-String[] rooms = {
-        new Maze().grid[2][2],
-        new Maze().grid[2][6],
-        new Maze().grid[2][10],
-        new Maze().grid[6][2],
-        new Maze().grid[6][6],
-        new Maze().grid[6][10],
-        new Maze().grid[10][2],
-        new Maze().grid[10][6],
-        new Maze().grid[10][10],
-};
+    private String[][] grid = {
+            {"X", "X", "X", "X", "X"},
+            {"X", " ", " ", " ", "X"},
+            {"X", " ", " ", " ", " "},
+            {"X", " ", " ", " ", "X"},
+            {"X", "X", " ", "X", "X"}
+    };
 
     public Room() {
-        
+        createRoom();
     }
 
-    private void getHeroPosition() {
+    public String[][] getGrid() {
+        return grid;
+    }
 
+    private void createRoom() {
+        for (int row = 0; row < grid.length; row++) {
+            for (int col = 0; col < grid[row].length; col++) {
+                System.out.print(grid[row][col]);
+            }
+            System.out.println();
+        }
     }
 }

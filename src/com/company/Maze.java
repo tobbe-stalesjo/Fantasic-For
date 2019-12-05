@@ -5,35 +5,58 @@ import java.util.Scanner;
 public class Maze {
     private Scanner scanner = new Scanner(System.in);
 
+    private int xPos = 10;
+    private int yPos = 2;
+
     String[][] grid = {
-            {"X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X "},
-            {"X ", "M ", "  ", "  ", "X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X "},
-            {"X ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "X "},
-            {"X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X "},
-            {"X ", "X ", "  ", "X ", "X ", "X ", "  ", "X ", "X ", "X ", "  ", "X ", "X "},
-            {"X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X "},
-            {"X ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "X "},
-            {"X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X "},
-            {"X ", "X ", "  ", "X ", "X ", "X ", "  ", "X ", "X ", "X ", "  ", "X ", "X "},
-            {"X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X "},
-            {"X ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "X "},
-            {"X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X ", "  ", "  ", "  ", "X "},
-            {"X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X ", "X "}
+            {"X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"},
+            {"X", " ", " ", " ", "X", " ", " ", " ", "X", " ", " ", " ", "X"},
+            {"X", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "X"},
+            {"X", " ", " ", " ", "X", " ", " ", " ", "X", " ", " ", " ", "X"},
+            {"X", "X", " ", "X", "X", "X", " ", "X", "X", "X", " ", "X", "X"},
+            {"X", " ", " ", " ", "X", " ", " ", " ", "X", " ", " ", " ", "X"},
+            {"X", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "X"},
+            {"X", " ", " ", " ", "X", " ", " ", " ", "X", " ", " ", " ", "X"},
+            {"X", "X", " ", "X", "X", "X", " ", "X", "X", "X", " ", "X", "X"},
+            {"X", " ", " ", " ", "X", " ", " ", " ", "X", " ", " ", " ", "X"},
+            {"X", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "X"},
+            {"X", " ", " ", " ", "X", " ", " ", " ", "X", " ", " ", " ", "X"},
+            {"X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"}
     };
 
-    public Maze() {
+    Room[] rooms = new Room[8];
 
+
+    public Maze() {
+        finaRummen();
+
+    }
+
+    private void finaRummen(){
+        for( int i = 0 ; i < 3 ; i++){
+            System.out.println();
+            for( int j = 0 ; j < 3 ; j++){
+                System.out.print(rooms[j]);
+            }
+        }
+    }
+
+    private void startPosition() {
+        grid[xPos][yPos] = "O ";
+    }
+
+    private void move() {
         System.out.println("Skriv din X-Pos [Mellan 1-11]");
-        int xPos = Integer.parseInt(scanner.nextLine());
+        int newxPos = Integer.parseInt(scanner.nextLine());
         System.out.println("Skriv din Y-Pos Mellan 1-11]");
-        int yPos = Integer.parseInt(scanner.nextLine());
-        if (grid[xPos][yPos].equals("X")) {
+        int newyPos = Integer.parseInt(scanner.nextLine());
+        if (grid[newxPos][newyPos] == ("X ")) {
             System.out.println("There is a wall!");
         } else {
             System.out.println("You enter a room!");
-            grid[xPos][yPos] = "O ";
+            grid[newxPos][newyPos] = "O ";
+            grid[xPos][yPos] = "  ";
         }
-        GameBoard();
     }
 
 
@@ -44,6 +67,14 @@ public class Maze {
             }
             System.out.println();
         }
+    }
 
+    private void searchRoom() {
+        for (int rad = 0; rad < 5; rad++) {
+            for (int col = 0; col < 5; col++) {
+                System.out.print(grid[rad][col]);
+            }
+            System.out.println();
+        }
     }
 }

@@ -3,8 +3,8 @@ package com.company;
 
 public class DragonBoss extends Monster {
 
-    public DragonBoss(int x, int y) {
+    public DragonBoss() {
 
-        super(x, y);
+        super(8);
     }
 }

@@ -12,9 +12,29 @@ public class Room {
             {"X", "X", " ", "X", "X"}
     };
 
-    public Room() {
-        createRoom();
+    private int[] connectedRooms;
+    private int heroX;
+    private int heroY;
+
+    public int[] getConnectedRooms() {
+        return connectedRooms;
     }
+
+    public int getHeroX() {
+        return heroX;
+    }
+
+    public int getHeroY() {
+        return heroY;
+    }
+
+    public Room(int id, int[] connectedRooms, int heroX, int heroY) {
+        this.connectedRooms = connectedRooms;
+        this.heroX = heroX;
+        this.heroY = heroY;
+        // createRoom();
+    }
+
 
     public String[][] getGrid() {
         return grid;

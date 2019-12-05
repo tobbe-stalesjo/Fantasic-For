@@ -4,8 +4,12 @@ public class Bandit extends  Monster {
 
     Potion potion = new Potion("healing potion", 1, 0, 0.5);
 
-    public Bandit(int x, int y) {
+    public Bandit(int row, int column) {
 
-        super(x, y);
+        super(row, column);
+    }
+
+    public String toString(){
+        return "Bandit's position: " + position +".";
     }
 }

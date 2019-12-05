@@ -1,28 +1,31 @@
 package com.company;
 
-public class Creature {
+import javafx.geometry.Pos;
 
-    private class Position {
-        public int row;// x row
-        public int column; // y column different from coordinates. And in java coordinates, up equal to minus, down equal to add
-        // opposite of Math
+public abstract class Creature {
+    private int currentRoom;
 
-        Position(int row, int column) {
-            this.row = row;
-            this.column = column;
-        }
 
-        @Override
-        public String toString() {
-            return
-                    "row: " + row +
-                            ", column: " + column;
-        }
-    }
 
     public Position position;
 
-    public Creature (int row, int column) {
-        this.position = new Position(row, column);
+    public Creature (int startRoom) {
+        this.currentRoom = startRoom;
     }
+
+    public int getCurrentRoom() {
+        return currentRoom;
+    }
+
+    public void setCurrentRoom(int currentRoom) {
+        this.currentRoom = currentRoom;
+    }
+
+    public Position getGridPosition(){
+        int x = currentRoom % 3;
+        int y = currentRoom / 3;
+        return new Position(2 + (x*4), 2 + (y*4));
+    }
+
+
 }

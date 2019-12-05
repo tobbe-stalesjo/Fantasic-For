@@ -2,29 +2,30 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class Backpack {
-    private static final double MAX_TOTAL_WEIGHT = 5;
+import java.util.ArrayList;
 
+public class Backpack {
+    private final double TOTAL_MAX_WEIGHT = 5;
     private ArrayList<Item> items = new ArrayList<>();
 
-
     public boolean addItem(Item item) {
-        if (getNowTotalWeight() + item.getWeight() <= MAX_TOTAL_WEIGHT) {
+        if (getCurrentTotalWeight() + item.getWeight() <= TOTAL_MAX_WEIGHT) {
             items.add(item);
 
             return true;
 
         }
-        System.out.println("to heavy can't add item");
+
         return false;
     }
 
-    private double getNowTotalWeight() {
-        double totalWeight;
+
+    private double getCurrentTotalWeight() {
+        double totalWeight = 0;
         for (Item item : items) {
             totalWeight += item.getWeight();
         }
-
+        //System.out.println("bag is too heavy");
         return totalWeight;
     }
 }

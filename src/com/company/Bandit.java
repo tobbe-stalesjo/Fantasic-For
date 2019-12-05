@@ -8,4 +8,8 @@ public class Bandit extends  Monster {
 
         super(4);
     }
+
+    public String toString(){
+        return "Bandit's position: " + position +".";
+    }
 }

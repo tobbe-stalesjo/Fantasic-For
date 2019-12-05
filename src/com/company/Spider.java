@@ -9,5 +9,9 @@ public class Spider extends Monster{
         super(6);
     }
 
+    public String toString(){
+        return "Spider's position: " + position +".";
+    }
+
 
 }

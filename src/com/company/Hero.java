@@ -14,17 +14,22 @@ public class Hero extends Creature {
         }
         return false;
     }
+
     public boolean defeatBandit(){
         if(defeatSpider()){
             return true;
         }
         return false;
     }
+
     public boolean defeatDragonBoss(){
         if(defeatBandit()){
             return true;
         }
         return false;
     }
+
+
+
 
 }

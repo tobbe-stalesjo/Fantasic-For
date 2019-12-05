@@ -4,9 +4,8 @@ public class Hero extends Creature {
 
     Backpack backpack = new Backpack();
 
-    public Hero(int row, int column) {
-
-        super(row, column);
+    public Hero(int startRoom) {
+        super(startRoom);
     }
 
     public boolean defeatSpider(){

@@ -2,9 +2,9 @@ package com.company;
 
 public class DragonBoss extends Monster {
 
+    public DragonBoss() {
 
-    public DragonBoss(int row, int column) {
-        super(row, column);
+        super(8);
     }
 
     public String toString(){

@@ -19,6 +19,18 @@ public class Backpack {
         return false;
     }
 
+    public void removeItem (Item item){
+        items.remove(item);
+    }
+
+    public Item getItem (String name){
+        for (Item item : items){
+            if(name.equals(item.getName())){
+                return item;
+            }
+        }
+        return null;
+    }
 
     private double getCurrentTotalWeight() {
         double totalWeight = 0;

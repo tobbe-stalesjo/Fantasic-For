@@ -6,7 +6,7 @@ public class Spider extends Monster{
 
     public Spider() {
 
-        super(6);
+        super(3);
     }
 
     public String toString(){

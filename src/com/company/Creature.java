@@ -8,14 +8,17 @@ public abstract class Creature {
     public Position position;
 
     public Creature (int startRoom) {
+
         this.currentRoom = startRoom;
     }
 
     public int getCurrentRoom() {
+
         return currentRoom;
     }
 
     public void setCurrentRoom(int currentRoom) {
+
         this.currentRoom = currentRoom;
     }
 

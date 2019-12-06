@@ -6,7 +6,7 @@ public class Bandit extends  Monster {
 
     public Bandit() {
 
-        super(4);
+        super(2);
     }
 
     public String toString(){

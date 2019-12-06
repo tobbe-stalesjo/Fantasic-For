@@ -11,7 +11,7 @@ public class DungeonGame {
 
     public DungeonGame() {
 
-        hero = new Hero(0, false);
+        hero = new Hero(6, false);                      // Sätter ut Hero i ett förutbestämt rum
         hero.addItemToBackpack(new Potion("Healing Potion", 1,0,0.5));
         hero.addItemToBackpack(new Potion("Healing Potion", 1,0,0.5));
         //Hero börjar med 2 healing potions.

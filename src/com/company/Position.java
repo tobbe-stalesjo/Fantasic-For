@@ -11,9 +11,8 @@ public class Position {
 
     @Override
     public String toString() {
-        return "Position{" +
+        return "Position " +
                 "x=" + x +
-                ", y=" + y +
-                '}';
+                " y=" + y;
     }
 }

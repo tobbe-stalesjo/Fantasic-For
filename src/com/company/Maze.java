@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class Maze {
     private Scanner scanner = new Scanner(System.in);
 
-    private int xPos = 10;
-    private int yPos = 2;
 
     String[][] grid = {
             {"X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"},

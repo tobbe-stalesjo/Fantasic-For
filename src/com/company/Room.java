@@ -4,14 +4,6 @@ import java.lang.reflect.Array;
 
 public class Room {
 
-    private String[][] grid = {
-            {"X", "X", "X", "X", "X"},
-            {"X", " ", " ", " ", "X"},
-            {"X", " ", " ", " ", " "},
-            {"X", " ", " ", " ", "X"},
-            {"X", "X", " ", "X", "X"}
-    };
-
     private int[] connectedRooms;
     private int heroX;
     private int heroY;
@@ -34,7 +26,4 @@ public class Room {
         return heroY;
     }
 
-    public String[][] getGrid() {
-        return grid;
-    }
 }

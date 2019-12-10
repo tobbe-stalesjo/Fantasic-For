@@ -2,11 +2,11 @@ package com.company;
 
 public class Spider extends Monster{
 
-    Potion potion = new Potion("healing potion", 1,0,0.5);
+    Potion potion = new Potion("healing potion");
 
     public Spider() {
 
-        super(6);
+        super(3);
     }
 
     public String toString(){

@@ -9,11 +9,10 @@ public class Position {
         this.y = y;
     }
 
-    @Override
+
     public String toString() {
-        return "Position{" +
+        return "Position " +
                 "x=" + x +
-                ", y=" + y +
-                '}';
+                " y=" + y;
     }
 }

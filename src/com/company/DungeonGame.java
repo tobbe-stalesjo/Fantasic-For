@@ -19,9 +19,7 @@ public class DungeonGame {
         hero = new Hero(6, false);                      // Sätter ut Hero i ett förutbestämt rum
         hero.addItemToBackpack(new Potion("Healing Potion"));
         hero.addItemToBackpack(new Potion("Healing Potion"));
-        // Position chestPos = goldenChest.setChestPosition(new Position(6, 9));
         Position chestPos = new Position(6, 9);
-        //Hero börjar med 2 healing potions.
         maze.updateChestPosition(chestPos);
     }
 
@@ -30,10 +28,18 @@ public class DungeonGame {
         // en while loop som kör detta
         maze.updateHeroPosition(hero.getGridPosition(), hero.getGridPosition());
         maze.showGameBoard();
-        int choice = menu.chooseRoom(maze, hero);
 
-        moveHeroToRoom(choice);
+        while (true) {
+            int choice = menu.chooseRoom(maze, hero);
 
+            moveHeroToRoom(choice);
+
+            int roomChoice = menu.roomEvents(choice);
+
+            if (roomChoice == 1) {
+                attackSpider();
+            }
+        }
         //metod som har en if sats beroende på rum
     }
 
@@ -43,5 +49,11 @@ public class DungeonGame {
         maze.updateHeroPosition(hero.getGridPosition(), oldPosition);
         maze.showGameBoard();
     }
+
+    public void attackSpider(){
+        System.out.println("attacking spider!");
+
+    }
+
 }
 

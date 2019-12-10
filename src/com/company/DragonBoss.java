@@ -4,7 +4,7 @@ public class DragonBoss extends Monster {
 
     public DragonBoss() {
 
-        super(8);
+        super(2);
     }
 
     public String toString(){

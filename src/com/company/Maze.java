@@ -5,9 +5,8 @@ import java.util.Scanner;
 public class Maze {
     private Scanner scanner = new Scanner(System.in);
 
-    private int xPos = 10;
-    private int yPos = 2;
 
+    
     String[][] grid = {
             {"X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"},
             {"X", " ", " ", " ", "X", " ", " ", " ", "X", " ", " ", " ", "X"},
@@ -24,7 +23,7 @@ public class Maze {
             {"X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"}
     };
 
-    Room[] rooms = new Room[8];
+    Room[] rooms = new Room[9];
 
 
     public Maze() {
@@ -32,8 +31,23 @@ public class Maze {
         rooms[0]  = new Room(0, connectedRooms0, 2,2);
         int connectedRooms1[] = {0,2,4};
         rooms[1]  = new Room(0, connectedRooms1, 6,2);
+        int connectedRooms2[] = {1,5};
+        rooms[2]  = new Room(0, connectedRooms2, 10,2);
+        int connectedRooms3[] = {0,4,6};
+        rooms[3]  = new Room(0, connectedRooms3, 2,6);
+        int connectedRooms4[] = {1,3,5,7};
+        rooms[4]  = new Room(0, connectedRooms4, 6,6);
+        int connectedRooms5[] = {2,5,8};
+        rooms[5]  = new Room(0, connectedRooms5, 10,6);
+        int connectedRooms6[] = {3,7};
+        rooms[6]  = new Room(0, connectedRooms6, 2,10);
+        int connectedRooms7[] = {4,6,8};
+        rooms[7]  = new Room(0, connectedRooms7, 6,10);
+        int connectedRooms8[] = {5,7};
+        rooms[8]  = new Room(0, connectedRooms8, 10,10);
 
-        showGameBoard();
+        //showGameBoard();
+
 
     }
 
@@ -43,33 +57,6 @@ public class Maze {
 
     public int[] getGetConnectedRooms(int roomID){
         return rooms[roomID].getConnectedRooms();
-    }
-
-    private void finaRummen(){
-        for( int i = 0 ; i < 3 ; i++){
-            System.out.println();
-            for( int j = 0 ; j < 3 ; j++){
-                System.out.print(rooms[j]);
-            }
-        }
-    }
-
-    private void startPosition() {
-        grid[xPos][yPos] = "O ";
-    }
-
-    private void move() {
-        System.out.println("Skriv din X-Pos [Mellan 1-11]");
-        int newxPos = Integer.parseInt(scanner.nextLine());
-        System.out.println("Skriv din Y-Pos Mellan 1-11]");
-        int newyPos = Integer.parseInt(scanner.nextLine());
-        if (grid[newxPos][newyPos] == ("X ")) {
-            System.out.println("There is a wall!");
-        } else {
-            System.out.println("You enter a room!");
-            grid[newxPos][newyPos] = "O ";
-            grid[xPos][yPos] = "  ";
-        }
     }
 
 
@@ -82,17 +69,15 @@ public class Maze {
         }
     }
 
-    private void searchRoom() {
-        for (int rad = 0; rad < 5; rad++) {
-            for (int col = 0; col < 5; col++) {
-                System.out.print(grid[rad][col]);
-            }
-            System.out.println();
-        }
-    }
 
     public void updateHeroPosition(Position pos) {
         grid[pos.y][pos.x] = "H";
     }
+
+    public void updateChestPosition(Position pos) {
+        grid[pos.y][pos.x] = "G";
+    }
+
+
 
 }

@@ -8,12 +8,21 @@ public class DungeonGame {
     Hero hero ;
     Backpack backpack;
     Dagger dagger;
+    GoldenChest goldenChest = new GoldenChest("Golden Chest");
+
+
 
     public DungeonGame() {
 
-        hero = new Hero(6, false);                      // Sätter ut Hero i ett förutbestämt rum
-        hero.addItemToBackpack(new Potion("Healing Potion", 1,0,0.5));
-        hero.addItemToBackpack(new Potion("Healing Potion", 1,0,0.5));
+        Position chestPos = goldenChest.setChestPosition(new Position(6,9));
+
+
+
+        hero = new Hero(6, false);
+        // Sätter ut Hero i ett förutbestämt rum
+
+        hero.addItemToBackpack(new Potion("Healing Potion"));
+        hero.addItemToBackpack(new Potion("Healing Potion"));
         //Hero börjar med 2 healing potions.
 
         Position pos = hero.getGridPosition();
@@ -22,9 +31,12 @@ public class DungeonGame {
                 Arrays.toString(maze.getGetConnectedRooms(hero.getCurrentRoom())));
 
         maze.updateHeroPosition(pos);
+        maze.updateChestPosition(chestPos);
         maze.showGameBoard();
 
 
+
+/*
         hero.setCurrentRoom(1);
         pos = hero.getGridPosition();
         System.out.println(pos);
@@ -33,9 +45,11 @@ public class DungeonGame {
         pos = hero.getGridPosition();
         System.out.println(pos);
 
+ */
+
         backpack = new Backpack();
 
-        dagger = new Dagger("Dagger", 0, 1, 1);
+        dagger = new Dagger("superDagger");
 
         backpack.addItem(dagger);
     }

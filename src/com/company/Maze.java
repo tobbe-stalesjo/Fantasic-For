@@ -46,8 +46,6 @@ public class Maze {
         int connectedRooms8[] = {5,7};
         rooms[8]  = new Room(0, connectedRooms8, 10,10);
 
-        //showGameBoard();
-
 
     }
 

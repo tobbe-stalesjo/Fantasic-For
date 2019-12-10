@@ -27,5 +27,4 @@ public abstract class Creature {
         return new Position(2 + (x*4), 2 + (y*4));
     }
 
-
 }

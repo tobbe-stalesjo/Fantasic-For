@@ -36,16 +36,15 @@ public class DungeonGame {
 
 
 
-/*
-        hero.setCurrentRoom(1);
-        pos = hero.getGridPosition();
-        System.out.println(pos);
 
+/*
         hero.setCurrentRoom(8);
         pos = hero.getGridPosition();
         System.out.println(pos);
 
  */
+
+
 
         backpack = new Backpack();
 

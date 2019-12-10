@@ -6,6 +6,7 @@ public class Maze {
     private Scanner scanner = new Scanner(System.in);
 
 
+    
     String[][] grid = {
             {"X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"},
             {"X", " ", " ", " ", "X", " ", " ", " ", "X", " ", " ", " ", "X"},
@@ -47,6 +48,7 @@ public class Maze {
 
         //showGameBoard();
 
+
     }
 
     public Room getRoom(int roomID){
@@ -72,5 +74,11 @@ public class Maze {
 grid [oldPosition.y][oldPosition.x] = " ";
         grid[pos.y][pos.x] = "H";
     }
+
+    public void updateChestPosition(Position pos) {
+        grid[pos.y][pos.x] = "G";
+    }
+
+
 
 }

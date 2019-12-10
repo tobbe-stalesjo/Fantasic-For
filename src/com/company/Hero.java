@@ -53,7 +53,4 @@ public class Hero extends Creature {
         return false;
     }
 
-
-
-
 }

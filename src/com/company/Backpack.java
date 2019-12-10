@@ -8,15 +8,15 @@ public class Backpack {
     private final double TOTAL_MAX_WEIGHT = 5;
     private ArrayList<Item> items = new ArrayList<>();
 
-    public boolean addItem(Item item) {
-        if (getCurrentTotalWeight() + item.getWeight() <= TOTAL_MAX_WEIGHT) {
+    public void addItem(Item item) {
+        //if (getCurrentTotalWeight() + item.getWeight() <= TOTAL_MAX_WEIGHT) {
             items.add(item);
 
-            return true;
+            //return true;
 
-        }
+       // }
 
-        return false;
+        //return false;
     }
 
     public void removeItem (Item item){
@@ -31,7 +31,7 @@ public class Backpack {
         }
         return null;
     }
-
+/*
     private double getCurrentTotalWeight() {
         double totalWeight = 0;
         for (Item item : items) {
@@ -40,6 +40,8 @@ public class Backpack {
         //System.out.println("bag is too heavy");
         return totalWeight;
     }
+
+ */
 
     public String showItems(){
         for(Item item: items){

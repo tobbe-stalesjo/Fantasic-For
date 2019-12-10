@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
-
 public class DungeonGame {
 
     Maze maze = new Maze();
@@ -12,36 +10,31 @@ public class DungeonGame {
     GoldenChest goldenChest = new GoldenChest("Golden Chest");
 
 
-
     public DungeonGame() {
 
-        hero = new Hero(6, false);                      // Sätter ut Hero i ett förutbestämt rum
-        hero.addItemToBackpack(new Potion("Healing Potion", 1, 0, 0.5));
-        hero.addItemToBackpack(new Potion("Healing Potion", 1, 0, 0.5));
-        Position chestPos = goldenChest.setChestPosition(new Position(6,9));
-        //Hero börjar med 2 healing potions.
+        backpack = new Backpack();
+        dagger = new Dagger("superDagger");
+        backpack.addItem(dagger);
 
+        hero = new Hero(6, false);                      // Sätter ut Hero i ett förutbestämt rum
+        hero.addItemToBackpack(new Potion("Healing Potion"));
+        hero.addItemToBackpack(new Potion("Healing Potion"));
+        // Position chestPos = goldenChest.setChestPosition(new Position(6, 9));
+        Position chestPos = new Position(6, 9);
+        //Hero börjar med 2 healing potions.
+        maze.updateChestPosition(chestPos);
+    }
+
+    public void startGame() {
+    
         // en while loop som kör detta
         maze.updateHeroPosition(hero.getGridPosition(), hero.getGridPosition());
         maze.showGameBoard();
         int choice = menu.chooseRoom(maze, hero);
+
         moveHeroToRoom(choice);
 
-        //metod och har en if sats beroende på rum
-
-        hero.setCurrentRoom(1);
-        pos = hero.getGridPosition();
-        System.out.println(pos);
-
-        hero.setCurrentRoom(8);
-        pos = hero.getGridPosition();
-        System.out.println(pos);
-
-        backpack = new Backpack();
-
-        dagger = new Dagger("superDagger");
-
-        backpack.addItem(dagger);
+        //metod som har en if sats beroende på rum
     }
 
     public void moveHeroToRoom(int roomNumber) {

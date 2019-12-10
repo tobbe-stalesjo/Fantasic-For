@@ -45,7 +45,7 @@ public class Maze {
         int connectedRooms8[] = {5,7};
         rooms[8]  = new Room(0, connectedRooms8, 10,10);
 
-        showGameBoard();
+        //showGameBoard();
 
     }
 
@@ -68,7 +68,8 @@ public class Maze {
     }
 
 
-    public void updateHeroPosition(Position pos) {
+    public void updateHeroPosition(Position pos, Position oldPosition) {
+grid [oldPosition.y][oldPosition.x] = " ";
         grid[pos.y][pos.x] = "H";
     }
 

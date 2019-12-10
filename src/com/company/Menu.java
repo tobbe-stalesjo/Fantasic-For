@@ -1,9 +1,19 @@
 package com.company;
+
+import java.util.Arrays;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
+
 public class Menu {
 
-Scanner option = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
 
+    public int chooseRoom(Maze maze, Hero hero) {
+        System.out.println("Choose what room to go to:" +
+                Arrays.toString(maze.getGetConnectedRooms(hero.getCurrentRoom())));
+        int choice = Integer.parseInt(scanner.nextLine());
+        return choice;
+
+    }
 }
+

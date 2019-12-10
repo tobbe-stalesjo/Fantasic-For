@@ -11,6 +11,8 @@ public abstract class Creature {
         this.currentRoom = startRoom;
     }
 
+
+
     public int getCurrentRoom() {
 
         return currentRoom;

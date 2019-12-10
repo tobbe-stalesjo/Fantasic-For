@@ -70,7 +70,8 @@ public class Maze {
     }
 
 
-    public void updateHeroPosition(Position pos) {
+    public void updateHeroPosition(Position pos, Position oldPosition) {
+grid [oldPosition.y][oldPosition.x] = " ";
         grid[pos.y][pos.x] = "H";
     }
 

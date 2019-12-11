@@ -45,6 +45,9 @@ public class Hero extends Creature {
     }
 
 
+    public void isSpiderDefeated(){
+        
+    }
 
     public void attackBandit(){
 

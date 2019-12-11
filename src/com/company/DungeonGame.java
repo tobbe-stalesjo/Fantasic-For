@@ -31,13 +31,25 @@ public class DungeonGame {
 
         while (true) {
             int choice = menu.chooseRoom(maze, hero);
+            if (choice==7) {
+                hero.addItemToBackpack(dagger);
+                backpack.showItems();
+            }
 
             moveHeroToRoom(choice);
 
             int roomChoice = menu.roomEvents(choice);
 
             if (roomChoice == 1) {
+                if (choice == 3){
                 attackSpider();
+                }
+                else if (choice == 2){
+                    hero.defeatBandit();
+                }
+                else {
+                   //attackDragonBoss();
+                }
             }
         }
         //metod som har en if sats beroende på rum

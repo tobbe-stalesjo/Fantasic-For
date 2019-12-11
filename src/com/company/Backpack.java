@@ -26,10 +26,9 @@ public class Backpack {
     }
 
 
-    public String showItems(){
-        for(Item item: items){
-            return item.getName();
+    public void showItems() {
+        for (Item item : items) {
+            System.out.println("Now you have following items in you backpack" + item);
         }
-        return null;
     }
 }

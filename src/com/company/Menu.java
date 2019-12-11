@@ -5,10 +5,6 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public enum RoomChoice{
-        ATTACK_SPIDER,
-        GO_TO_OTHER_ROOM
-    }
 
     Scanner scanner = new Scanner(System.in);
 

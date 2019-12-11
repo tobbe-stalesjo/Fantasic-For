@@ -9,8 +9,12 @@ public class Dagger extends Item {
 
     @Override
     public String toString() {
-        return String.format("Dagger name %s, heals %d, damage %d, weight: %d", getName());
+        return String.format(getName());
     }
+
+
+
+
 }
 
 

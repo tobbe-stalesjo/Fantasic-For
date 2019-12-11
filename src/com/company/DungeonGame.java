@@ -38,19 +38,57 @@ public class DungeonGame {
 
             moveHeroToRoom(choice);
 
-            int roomChoice = menu.roomEvents(choice);
+            int nextChoice = menu.roomEvents(choice);
 
-            if (roomChoice == 1) {
-                if (choice == 3){
-                attackSpider();
-                }
-                else if (choice == 2){
-                    hero.defeatBandit();
-                }
-                else {
-                   //attackDragonBoss();
+            if(choice==7){
+                hero.addItemToBackpack(dagger);
+                backpack.showItems();
+            }
+/*
+            if (choice == 3){
+                if(nextChoice==1){
+                    hero.attackSpider();
                 }
             }
+
+ */
+
+            if (nextChoice == 1) {
+                if (choice == 3){
+                        hero.attackSpider();
+                    }
+
+                if (choice ==1) {
+                    hero.attackBandit();
+                }
+
+                if(choice==2){
+                        hero.attackDragonBoss();
+                    }
+
+            }
+
+
+/*
+
+
+            if (choice == 3){
+                if(nextChoice==1){
+                    hero.attackSpider();
+                }
+            }
+            if (choice ==1){
+                if(nextChoice==1){
+                    hero.attackBandit();
+                }
+            }
+            if(choice==2){
+                if(nextChoice==1){
+                    hero.attackDragonBoss();
+                }
+            }
+
+ */
         }
         //metod som har en if sats beroende på rum
     }
@@ -62,7 +100,7 @@ public class DungeonGame {
         maze.showGameBoard();
     }
 
-    public void attackSpider(){
+    public void attack(){
         System.out.println("attacking spider!");
 
     }

@@ -16,19 +16,22 @@ public class Backpack {
         items.remove(item);
     }
 
-    public Item getItem (String name){
+
+    public void showItems(){
+        for(Item item: items){
+            System.out.println("Now you backpack have: " + item);;
+        }
+    }
+
+    public String getItemName(String name) {
         for (Item item : items){
+            if(item == null){
+                continue;
+            }
             if(name.equals(item.getName())){
-                return item;
+                return item.getName();
             }
         }
         return null;
-    }
-
-
-    public void showItems() {
-        for (Item item : items) {
-            System.out.println("Now you have following items in you backpack" + item);
-        }
     }
 }

@@ -16,7 +16,7 @@ public class Hero extends Creature {
         System.out.println("You've encountered an enemy. Do you want to attack or run away?");
         
     }
-
+/*
     private void drinkPotion(){
         Potion potion= (Potion)backpack.getItem("Healing Potion");
         if(potion != null){
@@ -28,16 +28,37 @@ public class Hero extends Creature {
         }
     }
 
+ */
+
     public void addItemToBackpack(Item item){
         backpack.addItem(item);
     }
 
-    public boolean defeatSpider(){
-        if(backpack.showItems().equals("superDagger")){
-            return true;
+    public void attackSpider() {//problem?
+        if (backpack.getItemName("superDagger") != null) {
+            if (backpack.getItemName("superDagger").equals("superDagger")) {
+                System.out.println("You defeat the Spider! Continue your adventure and find other Monster!");
+            }
+        } else {
+            System.out.println("Warning! You are injured. Drink a portion to heal. You need weapon to kill Monster!");
         }
-        return false;
     }
+
+
+
+    public void attackBandit(){
+
+    }
+    public void attackDragonBoss(){
+
+    }
+    /*{
+        if(backpack.showItems().equals("superDagger")){
+            return "You kill the Spider";
+        }
+        return "Find a weapon";
+    }
+    /*
 
     public boolean defeatBandit(){
         if(defeatSpider()){
@@ -52,5 +73,7 @@ public class Hero extends Creature {
         }
         return false;
     }
+
+ */
 
 }

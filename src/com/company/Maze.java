@@ -36,7 +36,7 @@ public class Maze {
         rooms[3] = new Room(0, connectedRooms3, 2, 6);
         int connectedRooms4[] = {1, 3, 5, 7};
         rooms[4] = new Room(0, connectedRooms4, 6, 6);
-        int connectedRooms5[] = {2, 5, 8};
+        int connectedRooms5[] = {2, 4, 8};
         rooms[5] = new Room(0, connectedRooms5, 10, 6);
         int connectedRooms6[] = {3, 7};
         rooms[6] = new Room(0, connectedRooms6, 2, 10);

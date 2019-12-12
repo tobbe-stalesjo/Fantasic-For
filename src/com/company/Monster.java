@@ -5,5 +5,7 @@ public abstract class Monster extends Creature {
 
         super(startRoom);
     }
+
+
 }
 

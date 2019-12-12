@@ -40,51 +40,21 @@ public class DungeonGame {
                 hero.addItemToBackpack(dagger);
                 backpack.showItems();
             }
-/*
-            if (choice == 3){
-                if(nextChoice==1){
-                    hero.attackSpider();
-                }
-            }
-
- */
 
             if (nextChoice == 1) {
                 if (choice == 3){
-                        hero.attackSpider();
+                    hero.attackSpider();
                     }
 
-                if (choice ==1) {
+                if (choice == 1) {
                     hero.attackBandit();
                 }
 
                 if(choice==2){
-                        hero.attackDragonBoss();
-                    }
-
-            }
-
-
-/*
-
-
-            if (choice == 3){
-                if(nextChoice==1){
-                    hero.attackSpider();
-                }
-            }
-            if (choice ==1){
-                if(nextChoice==1){
-                    hero.attackBandit();
-                }
-            }
-            if(choice==2){
-                if(nextChoice==1){
                     hero.attackDragonBoss();
-                }
+                    }
             }
 
- */
         }
         //metod som har en if sats beroende på rum
     }
@@ -96,10 +66,6 @@ public class DungeonGame {
         maze.showGameBoard();
     }
 
-    public void attack(){
-        System.out.println("attacking spider!");
-
-    }
 
 }
 

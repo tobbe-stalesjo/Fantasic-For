@@ -12,4 +12,6 @@ public class Bandit extends  Monster {
     public String toString(){
         return "Bandit's position: " + position +".";
     }
+
+
 }

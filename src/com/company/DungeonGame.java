@@ -43,15 +43,15 @@ public class DungeonGame {
 
             if (nextChoice == 1) {
                 if (choice == 3){
-                        hero.attackSpider();
+                    hero.attackSpider();
                     }
 
-                if (choice ==1) {
+                if (choice == 1) {
                     hero.attackBandit();
                 }
 
                 if(choice==2){
-                        hero.attackDragonBoss();
+                    hero.attackDragonBoss();
                     }
             }
 

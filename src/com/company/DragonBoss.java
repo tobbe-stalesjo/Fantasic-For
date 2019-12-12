@@ -10,4 +10,8 @@ public class DragonBoss extends Monster {
     public String toString(){
         return "DragonBoss's position: " + position +".";
     }
+
+
+
+
 }

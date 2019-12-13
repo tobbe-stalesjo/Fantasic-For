@@ -7,27 +7,32 @@ public class DungeonGame {
     Backpack backpack;
     Dagger dagger;
     Menu menu = new Menu();
-    GoldenChest goldenChest = new GoldenChest("Golden Chest");
+    GoldenChest goldenChest;
+
 
 
     public DungeonGame() {
 
         backpack = new Backpack();
         dagger = new Dagger("superDagger");
-        backpack.addItem(dagger);
+        goldenChest = new GoldenChest("goldenChest");
 
-        hero = new Hero(6, false);                      // Sätter ut Hero i ett förutbestämt rum
+        goldenChest.addItem(dagger);
+
+        hero = new Hero(6, "Hero", false, maze);                      // Sätter ut Hero i ett förutbestämt rum
         hero.addItemToBackpack(new Potion("Healing Potion"));
         hero.addItemToBackpack(new Potion("Healing Potion"));
         Position chestPos = new Position(6, 9);
         maze.updateChestPosition(chestPos);
+
     }
 
     public void startGame() {
-    
+
         // en while loop som kör detta
         maze.updateHeroPosition(hero.getGridPosition(), hero.getGridPosition());
         maze.showGameBoard();
+        maze.addMonsterToMaze();
 
         while (true) {
             int choice = menu.chooseRoom(maze, hero);
@@ -48,7 +53,7 @@ public class DungeonGame {
             if (nextChoice == 1) {
                 if (choice == 3){
                     hero.attackSpider();
-                    }
+                }
 
                 if (choice == 1) {
                     hero.attackBandit();
@@ -56,7 +61,7 @@ public class DungeonGame {
 
                 if(choice==2){
                     hero.attackDragonBoss();
-                    }
+                }
             }
 
         }
@@ -72,4 +77,5 @@ public class DungeonGame {
 
 
 }
+
 

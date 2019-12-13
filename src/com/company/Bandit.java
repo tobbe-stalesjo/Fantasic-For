@@ -4,9 +4,9 @@ public class Bandit extends  Monster {
 
     Potion potion = new Potion("healing potion");
 
-    public Bandit() {
+    public Bandit(int startRoom, String name) {
 
-        super(1);
+        super(startRoom, name);
     }
 
     public String toString(){

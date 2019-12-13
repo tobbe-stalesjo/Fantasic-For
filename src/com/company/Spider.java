@@ -6,9 +6,9 @@ public class Spider extends Monster{
 
     Potion potion = new Potion("healing potion");
 
-    public Spider() {
+    public Spider(int startRoom, String name) {
 
-        super(3);
+        super(startRoom, name);
     }
 
 

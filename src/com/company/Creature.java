@@ -6,12 +6,19 @@ public abstract class Creature {
 
     public Position position;
 
-    public Creature (int startRoom) {
+    private String name;
+
+    public Creature (int startRoom, String name) {
 
         this.currentRoom = startRoom;
+        this.name = name;
+
+        this.position = getGridPosition();
     }
 
-
+    public String getName() {
+        return name;
+    }
 
     public int getCurrentRoom() {
 

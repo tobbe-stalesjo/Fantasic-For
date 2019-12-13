@@ -6,6 +6,9 @@ public class Hero extends Creature {
 
     Backpack backpack = new Backpack();
     private boolean injured;
+    Spider spider = new Spider();
+    Menu menu = new Menu();
+    Maze maze = new Maze();
 
     public Hero(int startRoom, boolean injured) {
         super(startRoom);
@@ -30,6 +33,7 @@ public class Hero extends Creature {
 
  */
 
+
     public void addItemToBackpack(Item item){
         backpack.addItem(item);
     }
@@ -44,36 +48,54 @@ public class Hero extends Creature {
         }
     }
 
+    public boolean isSpiderDefeated(){
+        if (backpack.getItemName("superDagger") != null) {
+            if (backpack.getItemName("superDagger").equals("superDagger")) {
+                System.out.println(" ");
+
+            }
+            return true;
+        } else {
+            System.out.println(" ");
+        }
+        return false;
+
+    }
 
 
     public void attackBandit(){
-
-    }
-    public void attackDragonBoss(){
-
-    }
-    /*{
-        if(backpack.showItems().equals("superDagger")){
-            return "You kill the Spider";
+        if(isSpiderDefeated()){
+            System.out.println("You defeat the Bandit! Continue your adventure and find other Monster!");
         }
-        return "Find a weapon";
+     else {
+        System.out.println("You need defeat Spider first!");
     }
-    /*
-
-    public boolean defeatBandit(){
-        if(defeatSpider()){
-            return true;
-        }
-        return false;
-    }
-
-    public boolean defeatDragonBoss(){
-        if(defeatBandit()){
-            return true;
-        }
-        return false;
-    }
-
- */
-
 }
+
+    public boolean isBanditDefeated() {
+
+        if (isSpiderDefeated()) {
+
+            return true;
+        } else {
+            System.out.println(" ");
+        }
+        return false;
+
+    }
+
+
+
+   public void attackDragonBoss(){
+            if (isBanditDefeated()) {
+                System.out.println("Congratulations! You defeat the DragonBoss! You win the game!");
+            } else {
+                System.out.println("You need defeat other Monster first!");
+            }
+
+        }
+
+
+    }
+
+

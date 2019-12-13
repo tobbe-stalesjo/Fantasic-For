@@ -1,9 +1,11 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Maze {
     private Scanner scanner = new Scanner(System.in);
+    ArrayList<Monster> monsters = new ArrayList<>();
 
 
     String[][] grid = {
@@ -44,9 +46,42 @@ public class Maze {
         rooms[7] = new Room(0, connectedRooms7, 6, 10);
         int connectedRooms8[] = {5, 7};
         rooms[8] = new Room(0, connectedRooms8, 10, 10);
-
-
     }
+
+    public void addMonsterToMaze(){
+        monsters.add(new Spider(3,"Spider"));
+        monsters.add(new Bandit(1,"Bandit"));
+        monsters.add(new DragonBoss(2,"DragonBoss"));
+    }
+
+    public void removeSpiderFromMaze(){
+        monsters.remove(getMonster("Spider"));
+    }
+    public void removeBanditFromMaze(){
+        monsters.remove(getMonster("Bandit"));// 0 or 1?
+    }
+    public void removeDragonBossFromMaze(){
+        monsters.remove(getMonster("DragonBoss"));
+    }
+
+    public Monster getMonster(String nameToSearchFor){
+        for(Monster monster: monsters){
+            if(nameToSearchFor.equals(monster.getName())){
+                return monster;
+            }
+            if(monster == null){
+                continue;
+            }
+        }
+        return null;
+    }
+
+    public void showMonster(){
+        for(Monster monster: monsters){
+            System.out.println(monster);
+        }
+    }
+
 
     public Room getRoom(int roomID) {
         return rooms[roomID];

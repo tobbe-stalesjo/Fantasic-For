@@ -73,6 +73,7 @@ public class DungeonGame {
         Position oldPosition = hero.getGridPosition();
         hero.setCurrentRoom(roomNumber);
         maze.updateHeroPosition(hero.getGridPosition(), oldPosition);
+        maze.showRoomHeroHasEntered(oldPosition);
         maze.showGameBoard();
     }
 

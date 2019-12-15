@@ -23,7 +23,7 @@ public class DungeonGame {
         hero.addItemToBackpack(new Potion("Healing Potion"));
         hero.addItemToBackpack(new Potion("Healing Potion"));
         Position chestPos = new Position(6, 9);
-        maze.updateChestPosition(chestPos);
+
 
 
     }

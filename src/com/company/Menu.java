@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Menu {
-    
+
     Scanner scanner = new Scanner(System.in);
 
     public int chooseRoom(Maze maze, Hero hero) {//try catch

@@ -107,9 +107,6 @@ public class Maze {
         grid[pos.y][pos.x] = "H";
     }
 
-    public void updateChestPosition(Position pos) {
-        grid[pos.y][pos.x] = "G";
-    }
 
 
 }

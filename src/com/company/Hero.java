@@ -90,6 +90,7 @@ public class Hero extends Creature {
         if (isBanditDefeated()) {
             System.out.println("Congratulations! You defeat the DragonBoss! You win the game!");
             maze.removeDragonBossFromMaze();
+            System.exit(0);
         } else {
             System.out.println("You need defeat other Monster first!");
         }

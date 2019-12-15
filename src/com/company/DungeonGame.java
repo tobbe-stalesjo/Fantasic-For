@@ -35,6 +35,10 @@ public class DungeonGame {
         maze.showGameBoard();
         maze.addMonsterToMaze();
 
+        String filepath="D:\\my java\\Maze2\\Kahoot.wav";
+        Music music = new Music();
+        music.playMusic(filepath);
+
         while (true) {
             int choice = menu.chooseRoom(maze, hero);
 

@@ -107,6 +107,10 @@ public class Maze {
         grid[pos.y][pos.x] = "H";
     }
 
+    public void showRoomHeroHasEntered(Position oldPosition){
+        grid[oldPosition.y][oldPosition.x]="*";
+    }
+
 
 
 }

@@ -40,7 +40,7 @@ public class DungeonGame {
 
             moveHeroToRoom(choice);
 
-            int nextChoice = menu.roomEvents(choice);
+            int nextChoice = menu.roomEvents(choice, hero);
 
             if(choice==7){
                 hero.addItemToBackpack(dagger);

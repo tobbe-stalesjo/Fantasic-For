@@ -25,6 +25,7 @@ public class DungeonGame {
         Position chestPos = new Position(6, 9);
         maze.updateChestPosition(chestPos);
 
+
     }
 
     public void startGame() {

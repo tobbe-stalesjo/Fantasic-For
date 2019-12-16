@@ -8,10 +8,12 @@ public class Hero extends Creature {
     private boolean injured;
     Maze maze;
 
+
     public Hero(int startRoom, String name, boolean injured, Maze maze) {
         super(startRoom, name);
         this.injured = injured;
         this.maze = maze;
+
 
     }
 
@@ -45,19 +47,16 @@ public class Hero extends Creature {
                 maze.removeSpiderFromMaze();
 
 
-
             }
         } else {
             System.out.println("Warning! You are injured. Drink a portion to heal. You need weapon to kill Monster!");
         }
     }
 
-    public boolean isSpiderDefeated(){//search name
+    public boolean isSpiderDefeated(){
         Spider spider = (Spider)maze.getMonster("Spider");
-
         if(spider == null){
             return true;
-
         }
         return false;
     }
@@ -90,6 +89,7 @@ public class Hero extends Creature {
         if (isBanditDefeated()) {
             System.out.println("Congratulations! You defeat the DragonBoss! You win the game!");
             maze.removeDragonBossFromMaze();
+            System.exit(0);
         } else {
             System.out.println("You need defeat other Monster first!");
         }

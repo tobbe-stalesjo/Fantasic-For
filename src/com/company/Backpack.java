@@ -9,7 +9,7 @@ public class Backpack {
     private ArrayList<Item> items = new ArrayList<>();
 
     public void addItem(Item item) {
-            items.add(item);
+        items.add(item);
     }
 
     public void removeItem (Item item){

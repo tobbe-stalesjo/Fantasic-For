@@ -2,12 +2,16 @@ package com.company;
 
 public class Spider extends Monster{
 
+    Backpack backpack = new Backpack();
+
     Potion potion = new Potion("healing potion");
 
-    public Spider() {
+    public Spider(int startRoom, String name) {
 
-        super(3);
+        super(startRoom, name);
     }
+
+
 
     public String toString(){
         return "Spider's position: " + position +".";

@@ -2,12 +2,16 @@ package com.company;
 
 public class DragonBoss extends Monster {
 
-    public DragonBoss() {
+    public DragonBoss(int startRoom, String name) {
 
-        super(2);
+        super(startRoom, name);
     }
 
     public String toString(){
         return "DragonBoss's position: " + position +".";
     }
+
+
+
+
 }

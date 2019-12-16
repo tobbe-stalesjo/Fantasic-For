@@ -7,84 +7,64 @@ public class DungeonGame {
     Backpack backpack;
     Dagger dagger;
     Menu menu = new Menu();
-    GoldenChest goldenChest = new GoldenChest("Golden Chest");
+    GoldenChest goldenChest;
+
 
 
     public DungeonGame() {
 
         backpack = new Backpack();
         dagger = new Dagger("superDagger");
-        backpack.addItem(dagger);
+        goldenChest = new GoldenChest("goldenChest");
 
-        hero = new Hero(6, false);                      // Sätter ut Hero i ett förutbestämt rum
+        goldenChest.addItem(dagger);
+
+        hero = new Hero(6, "Hero", false, maze);                      // Sätter ut Hero i ett förutbestämt rum
         hero.addItemToBackpack(new Potion("Healing Potion"));
         hero.addItemToBackpack(new Potion("Healing Potion"));
         Position chestPos = new Position(6, 9);
-        maze.updateChestPosition(chestPos);
+
+
+
     }
 
     public void startGame() {
-    
+
         // en while loop som kör detta
         maze.updateHeroPosition(hero.getGridPosition(), hero.getGridPosition());
         maze.showGameBoard();
+        maze.addMonsterToMaze();
+
+        String filepath="D:\\my java\\Maze2\\Kahoot.wav";
+        Music music = new Music();
+        music.playMusic(filepath);
 
         while (true) {
             int choice = menu.chooseRoom(maze, hero);
 
             moveHeroToRoom(choice);
 
-            int nextChoice = menu.roomEvents(choice);
+            int nextChoice = menu.roomEvents(choice, hero);
 
             if(choice==7){
                 hero.addItemToBackpack(dagger);
                 backpack.showItems();
             }
-/*
-            if (choice == 3){
-                if(nextChoice==1){
-                    hero.attackSpider();
-                }
-            }
-
- */
 
             if (nextChoice == 1) {
                 if (choice == 3){
-                        hero.attackSpider();
-                    }
+                    hero.attackSpider();
+                }
 
-                if (choice ==1) {
+                if (choice == 1) {
                     hero.attackBandit();
                 }
 
                 if(choice==2){
-                        hero.attackDragonBoss();
-                    }
-
-            }
-
-
-/*
-
-
-            if (choice == 3){
-                if(nextChoice==1){
-                    hero.attackSpider();
-                }
-            }
-            if (choice ==1){
-                if(nextChoice==1){
-                    hero.attackBandit();
-                }
-            }
-            if(choice==2){
-                if(nextChoice==1){
                     hero.attackDragonBoss();
                 }
             }
 
- */
         }
         //metod som har en if sats beroende på rum
     }
@@ -93,13 +73,11 @@ public class DungeonGame {
         Position oldPosition = hero.getGridPosition();
         hero.setCurrentRoom(roomNumber);
         maze.updateHeroPosition(hero.getGridPosition(), oldPosition);
+        maze.showRoomHeroHasEntered(oldPosition);
         maze.showGameBoard();
     }
 
-    public void attack(){
-        System.out.println("attacking spider!");
-
-    }
 
 }
+
 

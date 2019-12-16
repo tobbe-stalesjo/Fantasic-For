@@ -15,4 +15,9 @@ public class GoldenChest extends Item {
     public String toString() {
         return null;
     }
+
+    public void addItem(Dagger dagger) {
+        daggers.add(dagger);
+
+    }
 }

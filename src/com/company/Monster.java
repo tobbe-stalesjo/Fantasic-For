@@ -1,9 +1,10 @@
 package com.company;
 public abstract class Monster extends Creature {
 
-    public Monster(int startRoom) {
+    public Monster(int startRoom, String name) {
 
-        super(startRoom);
+        super(startRoom, name);
     }
+
 }
 

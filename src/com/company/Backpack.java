@@ -23,13 +23,10 @@ public class Backpack {
         }
     }
 
-    public String getItemName(String name) {
+    public Item getItemName(String name) {
         for (Item item : items){
-            if(item == null){
-                continue;
-            }
             if(name.equals(item.getName())){
-                return item.getName();
+                return item;
             }
         }
         return null;

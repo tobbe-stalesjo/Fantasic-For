@@ -47,11 +47,9 @@ public class Hero extends Creature {
     }
 
     public void attackSpider() {
-        if (backpack.getDaggerName("superDagger") != null) {
-            if (backpack.getDaggerName("superDagger").equals("superDagger")) {
+        if (backpack.getItemName("superDagger") != null) {
                 System.out.println("You defeat the Spider! Continue your adventure and find other Monster!");
                 maze.removeSpiderFromMaze();
-            }
         } else {
             isInjured();
             System.out.println("You need to find a dagger first");

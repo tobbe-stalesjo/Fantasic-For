@@ -31,16 +31,4 @@ public class Backpack {
         }
         return null;
     }
-
-    public String getDaggerName(String name) {
-        for (Item item : items){
-            if(item == null){
-                continue;
-            }
-            if(name.equals(item.getName())){
-                return item.getName();
-            }
-        }
-        return null;
-    }
 }

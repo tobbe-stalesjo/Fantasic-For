@@ -6,13 +6,9 @@ public class Potion extends Item {
         super(name);
     }
 
-    public boolean drink(){
-
-        return false;
-    }
 
     @Override
     public String toString() {
-        return String.format("potion name %s, heals %d, damage %d, weight: %d", getName());
+        return String.format("potion name %s, heals %d", getName());
     }
 }

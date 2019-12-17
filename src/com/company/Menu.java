@@ -30,7 +30,7 @@ public class Menu {
     }
 
     public int roomEvents(int choice, Hero hero) {// if choose a room outside the connecting room, show Empty room. need fix here
-        
+
         if (choice == 3) {
             while (true)
                 try {

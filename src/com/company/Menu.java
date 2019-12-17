@@ -7,7 +7,7 @@ public class Menu {
 
     Scanner scanner = new Scanner(System.in);
 
-    public int chooseRoom(Maze maze, Hero hero) {//only one chance to input non-number
+    public int chooseRoom(Maze maze, Hero hero) {
 
         while (true) {
             try {
@@ -29,7 +29,7 @@ public class Menu {
 
     }
 
-    public int roomEvents(int choice, Hero hero) {// if choose a room outside the connecting room, show Empty room. need fix here
+    public int roomEvents(int choice, Hero hero) {
 
         if (choice == 3) {
             while (true)

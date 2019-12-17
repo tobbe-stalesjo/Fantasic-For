@@ -22,10 +22,10 @@ public class Hero extends Creature {
             System.out.println("You died, Game Over");
             System.exit(0);
         }
-        System.out.println("Warning! You are injured. Do you want to drink a potion? \n Press Y for Yes");
+        System.out.println("Warning! You are injured. Do you want to drink a potion? \nPress Y for Yes \nPress N to Continue");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        if (input.equals("y")) {
+        if (input.toLowerCase().equals("y")) {
             drinkPotion();
         }
     }

@@ -19,7 +19,7 @@ public class DungeonGame {
 
         goldenChest.addItem(dagger);
 
-        hero = new Hero(6, "Hero", false, maze);                      // Sätter ut Hero i ett förutbestämt rum
+        hero = new Hero(6, "Hero", maze);                      // Sätter ut Hero i ett förutbestämt rum
         hero.addItemToBackpack(new Potion("Healing Potion"));
         hero.addItemToBackpack(new Potion("Healing Potion"));
         Position chestPos = new Position(6, 9);
@@ -35,12 +35,16 @@ public class DungeonGame {
         maze.showGameBoard();
         maze.addMonsterToMaze();
 
-        String filepath="D:\\my java\\Maze2\\Kahoot.wav";
+        String filepath="C:\\Users\\Vi\\Documents\\Java\\FantFor\\Kahoot.wav";
         Music music = new Music();
         music.playMusic(filepath);
 
         while (true) {
             int choice = menu.chooseRoom(maze, hero);
+            if (choice==7) {
+                hero.addItemToBackpack(dagger);
+                backpack.showItems();
+            }
 
             moveHeroToRoom(choice);
 

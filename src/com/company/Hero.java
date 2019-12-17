@@ -31,15 +31,15 @@ public class Hero extends Creature {
     }
 
     private void drinkPotion() {
-        // behöver hämta potion från backpack
-        backpack.getItemName("Healing Potion");
-// ska dricka den och återställt health till 100 samt ta bort en potion
-        System.out.println("You are fully healed");
-        backpack.removeItem(potion);
-// om det är slut på potion så ska denna text komma
-        System.out.println("You have no potions");
+        Item potion = backpack.getItemName("Healing Potion");
+        if (potion != null) {
+            backpack.removeItem(potion);
+            health = health + 50;
+            System.out.println("You are fully healed");
+        }else {
+            System.out.println("You don't have any potions left.");
+        }
     }
-
 
 
     public void addItemToBackpack(Item item) {

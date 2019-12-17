@@ -31,6 +31,7 @@ public class DungeonGame {
     public void startGame() {
 
         // en while loop som kör detta
+        System.out.println("\nWelcome to explore the Dungeon, hero!\n");
         maze.updateHeroPosition(hero.getGridPosition(), hero.getGridPosition());
         maze.showGameBoard();
         maze.addMonsterToMaze();

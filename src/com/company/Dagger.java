@@ -9,7 +9,8 @@ public class Dagger extends Item {
 
     @Override
     public String toString() {
-        return String.format(getName());
+
+        return getName();
     }
 
 

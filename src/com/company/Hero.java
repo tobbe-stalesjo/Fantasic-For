@@ -22,10 +22,10 @@ public class Hero extends Creature {
             System.out.println("You died, Game Over");
             System.exit(0);
         }
-        System.out.println("Warning! You are injured. Do you want to drink a potion? \n Press Y for Yes");
+        System.out.println("Warning! You are injured. Do you want to drink a potion? \nPress Y for Yes \nPress N to Continue");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        if (input.equals("y")) {
+        if (input.toLowerCase().equals("y")) {
             drinkPotion();
         }
     }
@@ -47,11 +47,9 @@ public class Hero extends Creature {
     }
 
     public void attackSpider() {
-        if (backpack.getDaggerName("superDagger") != null) {
-            if (backpack.getDaggerName("superDagger").equals("superDagger")) {
+        if (backpack.getItemName("superDagger") != null) {
                 System.out.println("You defeat the Spider! Continue your adventure and find other Monster!");
                 maze.removeSpiderFromMaze();
-            }
         } else {
             isInjured();
             System.out.println("You need to find a dagger first");

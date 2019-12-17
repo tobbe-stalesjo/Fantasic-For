@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Maze {
-    private Scanner scanner = new Scanner(System.in);
+    //private Scanner scanner = new Scanner(System.in);
     ArrayList<Monster> monsters = new ArrayList<>();
 
 
@@ -76,16 +76,6 @@ public class Maze {
         return null;
     }
 
-    public void showMonster(){
-        for(Monster monster: monsters){
-            System.out.println(monster);
-        }
-    }
-
-
-    public Room getRoom(int roomID) {
-        return rooms[roomID];
-    }
 
     public int[] getGetConnectedRooms(int roomID) {
 

@@ -26,10 +26,10 @@ public class Hero extends Creature {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         if (input.equals("y")) {
-            //drinkPotion();
+            drinkPotion();
         }
     }
-/*
+
     private void drinkPotion() {
         // behöver hämta potion från backpack
         backpack.getItemName("Healing Potion");
@@ -40,7 +40,6 @@ public class Hero extends Creature {
         System.out.println("You have no potions");
     }
 
- */
 
 
     public void addItemToBackpack(Item item) {

@@ -88,6 +88,7 @@ public class Maze {
     }
 
     public int[] getGetConnectedRooms(int roomID) {
+
         return rooms[roomID].getConnectedRooms();
     }
 
@@ -108,6 +109,7 @@ public class Maze {
     }
 
     public void showRoomHeroHasEntered(Position oldPosition){
+
         grid[oldPosition.y][oldPosition.x]="*";
     }
 

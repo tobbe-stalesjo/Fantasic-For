@@ -19,18 +19,15 @@ public class DungeonGame {
 
         goldenChest.addItem(dagger);
 
-        hero = new Hero(6, "Hero", false, maze);                      // Sätter ut Hero i ett förutbestämt rum
+        hero = new Hero(6, "Hero", maze);                      // Sätter ut Hero i ett förutbestämt rum
         hero.addItemToBackpack(new Potion("Healing Potion"));
         hero.addItemToBackpack(new Potion("Healing Potion"));
-        Position chestPos = new Position(6, 9);
-
-
 
     }
 
     public void startGame() {
 
-        // en while loop som kör detta
+        System.out.println("\nWelcome to explore the Dungeon, hero!\n");
         maze.updateHeroPosition(hero.getGridPosition(), hero.getGridPosition());
         maze.showGameBoard();
         maze.addMonsterToMaze();
@@ -41,6 +38,10 @@ public class DungeonGame {
 
         while (true) {
             int choice = menu.chooseRoom(maze, hero);
+            if (choice==7) {
+                hero.addItemToBackpack(dagger);
+                backpack.showItems();
+            }
 
             moveHeroToRoom(choice);
 
@@ -66,7 +67,6 @@ public class DungeonGame {
             }
 
         }
-        //metod som har en if sats beroende på rum
     }
 
     public void moveHeroToRoom(int roomNumber) {

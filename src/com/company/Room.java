@@ -17,13 +17,4 @@ public class Room {
     public int[] getConnectedRooms() {
         return connectedRooms;
     }
-
-    public int getHeroX() {
-        return heroX;
-    }
-
-    public int getHeroY() {
-        return heroY;
-    }
-
 }
